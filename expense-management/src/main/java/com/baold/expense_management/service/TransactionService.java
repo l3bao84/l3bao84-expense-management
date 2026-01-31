@@ -6,5 +6,4 @@ import lombok.Data;
 
 public interface TransactionService {
 
-    DataResponse incomeMoney(IncomeRequest request);
 }

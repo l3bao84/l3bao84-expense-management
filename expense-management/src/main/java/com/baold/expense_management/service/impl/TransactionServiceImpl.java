@@ -19,23 +19,4 @@ import static com.baold.expense_management.constants.ResponseCodeConstants.*;
 @RequiredArgsConstructor
 public class TransactionServiceImpl implements TransactionService {
 
-    private final CategoryRepository categoryRepository;
-
-    @Override
-    public DataResponse incomeMoney(IncomeRequest request) {
-        if(DataUtils.isNullOrEmpty(request.getAmount())) {
-            return new DataResponse(ERROR_CODE_1, MessageFormat.format(MISSING_PARAM, AMOUNT));
-        }
-        if(DataUtils.isNullOrEmpty(request.getCategoryId())) {
-            return new DataResponse(ERROR_CODE_1, MessageFormat.format(MISSING_PARAM, CATEGORY_ID));
-        }
-        if(request.getAmount() <= 0) {
-            return new DataResponse(ERROR_CODE_2, INVALID_CHARGE_AMOUNT);
-        }
-        Category category = categoryRepository.findById(request.getCategoryId()).orElse(null);
-        if(DataUtils.isNullOrEmpty(category)) {
-            return new DataResponse(ERROR_CODE_3, INVALID_CATEGORY);
-        }
-        return new DataResponse(ERROR_CODE_0, DEFAULT_SUCCESS);
-    }
 }
