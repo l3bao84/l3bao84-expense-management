@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: expense-management
+  datasource:
+    url: jdbc:mysql://host.docker.internal:3306/historical_events
+    #    url: jdbc:mysql://localhost:3306/historical_events
+    username: root
+    password: 080402
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
