@@ -7,6 +7,10 @@ spring:
     url: jdbc:mysql://trolley.proxy.rlwy.net:10974/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
     password: IVVGSwLXTApJcNPJFndhORrUumdVTCKV
+    hikari:
+      initialization-fail-timeout: -1
+      connection-timeout: 30000
+      maximum-pool-size: 5
 
   jpa:
     hibernate:
