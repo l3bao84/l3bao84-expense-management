@@ -18,6 +18,10 @@ public class Category {
 
     private String description;
 
+    private Integer status;
+
+    private String icon;
+
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
