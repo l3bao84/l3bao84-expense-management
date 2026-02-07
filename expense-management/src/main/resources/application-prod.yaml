@@ -2,7 +2,7 @@ spring:
   application:
     name: expense-management
   server:
-    port: ${PORT:8080}
+    port: 8080
   datasource:
     url: jdbc:mysql://trolley.proxy.rlwy.net:10974/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
     username: root
